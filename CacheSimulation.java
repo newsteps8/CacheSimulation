@@ -1,5 +1,4 @@
 //Büşra_Gökmen
-//150116027
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -259,7 +258,7 @@ static String temp = "default";
 
 
        //read ram file
-        File file = new File("ram.txt");//ramden okuduğu belirlenmiş byte sayısına göre data okuyo
+        File file = new File("ram.txt");//ramden okuduğu belirlenmiş byte sayısına göre data okuyor
         String listString = "";
         try (Scanner scanner = new Scanner(file);) {
             while (scanner.hasNext()) {
@@ -275,7 +274,7 @@ static String temp = "default";
             listString = sb.toString();
             int s=0;
             while((2 * BlockofsetofL1D + n)<=listString.length()){
-                adress.add(s,listString.substring(n, 2 * BlockofsetofL1D + n));//rami byte sayısına göre adreslere bölüyo
+                adress.add(s,listString.substring(n, 2 * BlockofsetofL1D + n));//rami byte sayısına göre adreslere bölüyor
                 n += 2 * BlockofsetofL1D;
                 s+=1;
             }
@@ -307,7 +306,7 @@ for (int j=0; j<operation.size(); j++) {
             }
         }
         for (k=0; k<L1E; k++) {
-            if (tagofL1D[setbit][k].equals(as.substring(0, 32 - (L1b + L1s)))){//taglerin örtüşüp örtüşmediğini kontrol ediyo
+            if (tagofL1D[setbit][k].equals(as.substring(0, 32 - (L1b + L1s)))){//taglerin örtüşüp örtüşmediğini kontrol ediyor
                 hit_L1D += 1;
                 MİSS_or_HIT = "hit";
             }
@@ -315,7 +314,7 @@ for (int j=0; j<operation.size(); j++) {
                 miss_L1D+=1;
                 MİSS_or_HIT = "miss";
                 for (k=0; k<L1E; k++) {
-                    if ( vL1D[setbit][k] == 0){//valid biti 0 olan line a yeni tagi ve datayı yazıyo
+                    if ( vL1D[setbit][k] == 0){//valid biti 0 olan line a yeni tagi ve datayı yazıyor
                         dataofL1D[setbit][k]= current_data;
                         tagofL1D[setbit][k]=as.substring(0,32-(L1b+L1s));
                         vL1D[setbit][k]++;
